@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.transaction-container {
+    max-width: 500px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-size: medium;
+}
+
+h1 {
+    color: #e91e63;
+    margin-bottom: 1rem;
+}
+
+#food-price {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.connect-btn, .buy-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.connect-btn {
+    background-color: #03a9f4;
+    color: white;
+}
+
+.connect-btn:hover {
+    background-color: #0288d1;
+}
+
+.buy-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.buy-btn:hover {
+    background-color: #388e3c;
+}
+
+.back-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #e67e00;
+}

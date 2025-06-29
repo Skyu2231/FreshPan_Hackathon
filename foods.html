@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreshPan - Food Menu</title>
+  <link rel="stylesheet" href="foods.css">
+</head>
+<body>
+  <div class="menu-container">
+    <h1>Food Available Near You</h1>
+
+    <div class="food-grid" id="food-grid">
+      <!-- Static Food Items -->
+      <div class="food-card">
+        <a href="transaction.html?food=Pizza&price=1.5"><img src="https://cdn.pixabay.com/photo/2022/06/07/14/15/food-7248455_1280.png" alt="Pizza">BUY</a>
+        <h2>Pizza</h2>
+        <p>Distance: 1.3 km</p>
+        <p>Price: $1.5</p>
+        <p class="description">On Demand Order</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Burger&price=0.8"><img src="https://cdn.pixabay.com/photo/2023/05/01/14/42/ai-generated-7963232_1280.jpg" alt="Burger">BUY</a>
+        <h2>Burger</h2>
+        <p>Distance: 1.6 km</p>
+        <p>Price: $0.8</p>
+        <p class="description">On Demand Order</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Pasta&price=1"><img src="https://cdn.pixabay.com/photo/2024/09/21/04/22/ai-generated-9062923_1280.png" alt="Pasta">BUY</a>
+        <h2>Pasta</h2>
+        <p>Distance: 1.9 km</p>
+        <p>Price: $1</p>
+        <p class="description">Already cooked</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Sandwich&price=1"><img src="https://cdn.pixabay.com/photo/2021/07/11/03/47/sandwich-6402803_1280.png" alt="Sandwich">BUY</a>
+        <h2>Sandwich</h2>
+        <p>Distance: 1.1 km</p>
+        <p>Price: $1</p>
+        <p class="description">On Demand Order</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Noodles&price=1.1"><img src="https://cdn.pixabay.com/photo/2021/07/15/19/45/spaghetti-6469293_1280.png" alt="Noodles">BUY</a>
+        <h2>Noodles</h2>
+        <p>Distance: 1.8 km</p>
+        <p>Price: $1.1</p>
+        <p class="description">Already cooked</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Biryani&price=1.5"><img src="https://cdn.pixabay.com/photo/2023/07/12/20/39/ai-generated-8123327_1280.png" alt="Biryani">BUY</a>
+        <h2>Biryani</h2>
+        <p>Distance: 1.4 km</p>
+        <p>Price: $1.5</p>
+        <p class="description">Already cooked</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Tacos&price=1.2"><img src="https://cdn.pixabay.com/photo/2024/03/05/18/43/taco-8615083_1280.png" alt="Tacos">BUY</a>
+        <h2>Tacos</h2>
+        <p>Distance: 1.7 km</p>
+        <p>Price: $1.2</p>
+        <p class="description">On Demand Order</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Dosa&price=1"><img src="https://www.awesomecuisine.com/wp-content/uploads/2009/06/Plain-Dosa.jpg" alt="Dosa">BUY</a>
+        <h2>Dosa</h2>
+        <p>Distance: 1.2 km</p>
+        <p>Price: $1</p>
+        <p class="description">On Demand Order</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Fried_Rice&price=1.2"><img src="https://cdn.pixabay.com/photo/2024/09/10/20/21/bowl-9038035_1280.png" alt="Fried_Rice">BUY</a>
+        <h2>Fried Rice</h2>
+        <p>Distance: 1.35 km</p>
+        <p>Price: $1.2</p>
+        <p class="description">Already cooked</p>
+      </div>
+
+      <div class="food-card">
+        <a href="transaction.html?food=Paneer_Roll&price=1"><img src="https://madhurasrecipe.com/wp-content/uploads/2020/10/Paneer-Roll.jpg" alt="Paneer_Roll">BUY</a>
+        <h2>Paneer Roll</h2>
+        <p>Distance: 1.6 km</p>
+        <p>Price: $1</p>
+        <p class="description">On Demand Order</p>
+      </div>
+    </div>
+
+    <button onclick="window.history.back()" class="back-button">Back</button>
+  </div>
+
+  <!-- Script for seller-added items -->
+<script>
+    const deliveryType = new URLSearchParams(window.location.search).get("delivery") || "self";
+    document.querySelectorAll(".food-card a").forEach(link => {
+    const url = new URL(link.href);
+    url.searchParams.set("delivery", deliveryType);
+    link.href = url.toString();
+  });
+
+  const grid = document.getElementById("food-grid");
+  const dishes = JSON.parse(localStorage.getItem("dishes") || "[]");
+  const sellerWallet = localStorage.getItem("lastSellerWallet");
+  dishes.forEach((dish, index) => {
+    const card = document.createElement("div");
+    card.className = "food-card";
+    card.innerHTML = `
+      <a href="transaction.html?food=${encodeURIComponent(dish.name)}&price=${encodeURIComponent(dish.price)}">
+        <img src="${dish.image}" alt="${dish.name}">
+      </a>
+      <h2>${dish.name}</h2>
+      <p>Distance: ${dish.distance} km</p>
+      <p>Price: $${dish.price}</p>
+      <p class="description">Already cooked</p>
+      ${dish.wallet === sellerWallet ? `<button class='delete-btn' data-index='${index}'>Delete</button>` : ''}
+    `;
+    grid.appendChild(card);
+  });
+
+  // Safe event delegation for delete
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.matches(".delete-btn")) {
+      const index = parseInt(e.target.dataset.index);
+      const items = JSON.parse(localStorage.getItem("dishes") || "[]");
+      items.splice(index, 1);
+      localStorage.setItem("dishes", JSON.stringify(items));
+      location.reload();
+    }
+  });
+</script>
+</body>
+</html>

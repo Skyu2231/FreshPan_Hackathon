@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+    text-align: center;
+}
+
+.menu-container {
+    padding: 2rem;
+}
+
+.menu-container h1 {
+    color: #e91e63;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.food-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.food-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+    transform: scale(1.05);
+}
+
+.food-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.food-card h2 {
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.food-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Back button */
+.back-button {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e67e00;
+}
+.delete-btn {
+    margin-top: 10px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}

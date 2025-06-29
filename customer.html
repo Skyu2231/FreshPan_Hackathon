@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshPan - Customer Options</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #ff0000;">FreshPan</h1>
+        <div class="options-container">
+            <div class="option-card">
+                <button class="option-btn self-btn" onclick="window.location.href='foods.html?delivery=self'">SELF</button>
+                <ul class="feature-list">
+                    <li>No delivery charge</li>
+                    <li>Self service</li>
+                </ul>
+            </div>
+            <div class="option-card">
+                <button class="option-btn fast-btn" onclick="window.location.href='foods.html?delivery=fast'">FAST</button>
+                <p style="color: black; font-weight: bold;">(+$0.30 delivery charge)</p>
+                <ul class="feature-list">
+                    <li>Fast delivery at home</li>
+                    <li>Minimal delivery charge</li>
+                </ul>
+            </div>
+        </div>
+        <button onclick="window.history.back()" class="back-button">Back to Home</button>
+    </div>
+</body>
+</html>

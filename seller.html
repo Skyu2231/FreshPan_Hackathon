@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshPan - Seller</title>
+  <link rel="stylesheet" href="seller.css">
+</head>
+<body>
+  <div class="seller-container">
+    <h1>Upload Your Dish</h1>
+    <form id="dish-form">
+      <input type="text" id="wallet" placeholder="Wallet_Address" required>
+      <input type="text" id="name" placeholder="Name of Dish" required>
+      <input type="file" id="image" accept="image/*" required>
+      <input type="number" id="price" placeholder="Price in $" step="0.01" required>
+      <button type="submit">Submit Dish</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('dish-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const wallet = document.getElementById('wallet').value;
+      const name = document.getElementById('name').value;
+      const price = document.getElementById('price').value;
+      const imageFile = document.getElementById('image').files[0];
+
+      const reader = new FileReader();
+      reader.onload = function() {
+        const dish = {
+          name,
+          price,
+          wallet,
+          image: reader.result,
+          distance: (Math.random() * 2 + 1).toFixed(1)
+        };
+
+        const dishes = JSON.parse(localStorage.getItem('dishes') || '[]');
+        dishes.push(dish);
+        localStorage.setItem('dishes', JSON.stringify(dishes));
+        localStorage.setItem('lastSellerWallet', wallet);
+
+        window.location.href = 'foods.html';
+      }
+      reader.readAsDataURL(imageFile);
+    });
+  </script>
+</body>
+</html>

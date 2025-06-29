@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction - FreshPan</title>
+  <link rel="stylesheet" href="transaction.css" />
+</head>
+<body>
+  <div class="transaction-container">
+    <h1 id="food-name">Food Name</h1>
+    <p id="food-price">Price: $0</p>
+    <p id="wallet">Your Wallet Address: <span id="wallet-address">Not Connected</span></p>
+    <p id="wallet">Seller Wallet Address: 0x6bB5675868436Ab3A9B4F43c7a30Edee30AA7f88</p>
+
+
+    <div class="buttons">
+      <button id="connect-btn" class="connect-btn">Connect</button>
+      <button id="buy-btn" class="buy-btn">Buy</button>
+    </div>
+
+    <button onclick="window.history.back()" class="back-button">Back</button>
+  </div>
+
+  <script>
+    // Parse URL parameters first
+    const params = new URLSearchParams(window.location.search);
+    const food = params.get("food");
+    const price = params.get("price");
+
+    document.getElementById("food-name").textContent = food || "Food Name";
+    document.getElementById("food-price").textContent = "Price: $" + (price || "0");
+  </script>
+  
+  <script type="module" src="transaction.js"></script>
+</body>
+</html>
