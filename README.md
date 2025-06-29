@@ -27,7 +27,7 @@ This is more than a food ordering app — it’s a mission to **reduce food wast
 
 ##  Features
 
--  **Sellers** can:
+ **Sellers** can:
   - Upload food dishes (name, price, image, wallet address)
   - Store dish data on-chain (via smart contracts)
   - Remove their own uploaded dishes
