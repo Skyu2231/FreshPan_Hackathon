@@ -1,6 +1,6 @@
 #  FreshPan – Decentralized Food Ordering dApp
 
-FreshPan is a WEB3 enabled ordering application built using HTML, CSS, JavaScript, Solidity(not-enabled as of now) and Viem for blockchain interaction. It allows food sellers(especially housewives) to upload dishes (on-demand or pre-cooked) and customers to order healthy homemade food using cryptocurrency (ETH) at very cheap-cost, with options for self-pickup or fast delivery.
+FreshPan is a WEB3 enabled healthy homemade ordering application built using HTML, CSS, JavaScript, Solidity(not-enabled as of now) and Viem for blockchain interaction. It allows food sellers(especially housewives) to upload dishes (on-demand or pre-cooked) and customers to order healthy homemade food using cryptocurrency (ETH) at very cheap-cost, with options for self-pickup or fast delivery.
 
 ---
 ##  Project Concept
